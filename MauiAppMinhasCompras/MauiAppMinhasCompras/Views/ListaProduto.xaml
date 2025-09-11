@@ -6,16 +6,17 @@
     Title="Minhas Compras">
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem Text="Somar" Clicked="ToolbarItem_Clicked_1" />
+        <ToolbarItem Clicked="ToolbarItem_Clicked_1" Text="Somar" />
         <ToolbarItem Clicked="ToolbarItem_Clicked" Text="Adicionar" />
     </ContentPage.ToolbarItems>
 
     <VerticalStackLayout>
-        <SearchBar x:Name="txt_search" 
-                   Placeholder="Busca de Produtos"
-                   TextChanged="txt_search_TextChanged"/>
-        
-        <ListView x:Name="lst_produtos">
+        <SearchBar
+            x:Name="txt_search"
+            Placeholder="Busca de Produtos"
+            TextChanged="txt_search_TextChanged" />
+
+        <ListView x:Name="lst_produtos" ItemSelected="lst_produtos_ItemSelected">
             <ListView.Header>
 
                 <Grid ColumnDefinitions="0.5*, 3*, 1*, 1*, 1.5*">
@@ -25,14 +26,14 @@
                     <Label Grid.Column="3" Text="Qnt" />
                     <Label Grid.Column="4" Text="Total" />
                 </Grid>
-                
+
             </ListView.Header>
 
             <ListView.ItemTemplate>
                 <DataTemplate>
                     <ViewCell>
                         <ViewCell.ContextActions>
-                            <MenuItem Text="Remover" Clicked="MenuItem_Clicked" />
+                            <MenuItem Clicked="MenuItem_Clicked" Text="Remover" />
                         </ViewCell.ContextActions>
 
                         <Grid ColumnDefinitions="0.5*, 3*, 1*, 1*, 1.5*">
