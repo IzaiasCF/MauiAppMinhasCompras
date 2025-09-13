@@ -32,7 +32,6 @@ namespace MauiAppMinhasCompras
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("pt-BR");
 
             //MainPage = new AppShell();
-
             MainPage = new NavigationPage(new Views.ListaProduto());
         }
 
